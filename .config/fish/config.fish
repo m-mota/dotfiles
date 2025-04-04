@@ -17,7 +17,6 @@ function fish_prompt
 	set color $root
     end
 
-    # Split away anchor
     set folder (string split "/" (string sub -s 2 $dir))[-1]
 
     if test -z $folder

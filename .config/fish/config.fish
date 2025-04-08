@@ -2,9 +2,8 @@ set fish_greeting
 
 
 function fish_prompt
-    # set prompt "$USER@$(prompt_hostname) $(basename (prompt_pwd))"
     set prompt (basename (prompt_pwd))
-    echo (set_color -r yellow) $prompt (set_color normal) ""
+    echo "" (set_color -r magenta) $prompt (set_color normal) ""
 end
 
 
@@ -18,9 +17,14 @@ end
 
 
 function md
-    set cmd $argv[1..-2]
-    set dir $argv[-1]
+    set cmd $argv[1]
 
-    mkdir -p $dir
-    $cmd $dir
+    set args $argv[2..-2]
+    set args (string replace -a "^" ">" $args)
+    set args (string replace -a "!" "|" $args)
+
+    set dir $argv[-1]
+    set path (string match -r ".*\/" $dir)
+
+    mkdir -p $path ; eval $cmd $args $dir
 end

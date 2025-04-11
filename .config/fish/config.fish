@@ -8,15 +8,6 @@ function fish_prompt
 end
 
 
-function vol
-    if test -z $argv
-        wpctl get-volume @DEFAULT_AUDIO_SINK@
-    else
-        wpctl set-volume @DEFAULT_AUDIO_SINK@ "$argv%"
-    end
-end
-
-
 function md
     set cmd $argv[1]
     set args $argv[2..-2]

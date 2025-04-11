@@ -8,18 +8,30 @@ config_version: 2
 settings:
   colors.completion.category.border.bottom:
     global: black
+  content.javascript.clipboard:
+    https://catppuccin.com: access-paste
+  content.notifications.enabled:
+    https://www.youtube.com: false
   downloads.position:
     global: bottom
+  downloads.remove_finished:
+    global: 1000
   scrolling.bar:
     global: never
   scrolling.smooth:
     global: true
+  statusbar.show:
+    global: always
   tabs.favicons.show:
     global: always
+  tabs.max_width:
+    global: -1
   tabs.position:
     global: bottom
   tabs.show:
-    global: always
+    global: multiple
+  tabs.show_switching_delay:
+    global: 2500
   tabs.title.alignment:
     global: left
   tabs.title.elide:
